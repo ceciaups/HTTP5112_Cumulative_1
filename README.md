@@ -20,7 +20,7 @@
 | View | A View which uses server rendering to display the information of a teacher from the MySQL Database | [/Views/Teacher/Show.cshtml](HTTP5112_Cumulative_1/Views/Teacher/Show.cshtml) |
 
 ## Student:
-![The layout of the Student Page](https://raw.githubusercontent.com/ceciaups/HTTP5112_Cumulative_1/master/HTTP5112_Cumulative_1/Capture/student.PNG)
+![The layout of the Student Page](https://raw.githubusercontent.com/ceciaups/HTTP5112_Cumulative_1/master/HTTP5112_Cumulative_1/Capture/student.png)
 | Type | Description | File |
 | --- | --- | --- |
 | Controller | A WebAPI Controller which accesses information about students | [/Controllers/StudentDataController.cs](HTTP5112_Cumulative_1/Controllers/StudentDataController.cs) |
@@ -30,7 +30,7 @@
 | View | A View which uses server rendering to display the information of a student from the MySQL Database | [/Views/Student/Show.cshtml](HTTP5112_Cumulative_1/Views/Student/Show.cshtml) |
 
 ## Class:
-![The layout of the Class Page](https://raw.githubusercontent.com/ceciaups/HTTP5112_Cumulative_1/master/HTTP5112_Cumulative_1/Capture/class.PNG)
+![The layout of the Class Page](https://raw.githubusercontent.com/ceciaups/HTTP5112_Cumulative_1/master/HTTP5112_Cumulative_1/Capture/class.png)
 | Type | Description | File |
 | --- | --- | --- |
 | Controller | A WebAPI Controller which accesses information about classes | [/Controllers/ClassDataController.cs](HTTP5112_Cumulative_1/Controllers/ClassDataController.cs) |
