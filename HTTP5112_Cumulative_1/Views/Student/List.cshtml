@@ -1,0 +1,22 @@
+﻿@model IEnumerable<HTTP5112_Cumulative_1.Models.Student>
+@{
+    ViewBag.Title = "Student List";
+}
+
+<div>
+    <a class="navlink" href="/Student">Back To Students</a>
+</div>
+
+<div class="text-center">
+    <h1 class="display-4">Students Page</h1>
+</div>
+
+<div id="containerlist">
+    <h2>List of Students</h2>
+    @foreach (var Student in Model)
+    {
+        <div class="listitem row">
+            <div class="col-md-12"><a href="/Student/Show/@Student.StudentId">@Student.StudentFname @Student.StudentLname</a></div>
+        </div>
+    }
+</div>
