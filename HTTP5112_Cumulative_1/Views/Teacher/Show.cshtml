@@ -18,4 +18,13 @@
     <p>Employee Number: @Model.EmployeeNumber</p>
     <p>Hire Date: @Model.HireDate</p>
     <p>Salary: @Model.Salary</p>
+    <p>
+        Class:
+        <ol>
+            @foreach (var Class in Model.CourseTaught)
+            {
+                <li>@Class.ClassCode @Class.ClassName</li>
+            }
+        </ol>
+    </p>
 </div>

@@ -58,8 +58,6 @@ namespace HTTP5112_Cumulative_1.Controllers
         [Route("api/ClassData/FindClass")]
         public Class FindClass(int id)
         {
-            Class NewClass = new Class();
-
             MySqlConnection Conn = School.AccessDatabase();
 
             Conn.Open();
@@ -69,6 +67,8 @@ namespace HTTP5112_Cumulative_1.Controllers
             cmd.CommandText = "SELECT * FROM classes WHERE classid = " + id;
 
             MySqlDataReader ResultSet = cmd.ExecuteReader();
+
+            Class NewClass = new Class();
 
             while (ResultSet.Read())
             {

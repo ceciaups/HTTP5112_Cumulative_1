@@ -13,6 +13,7 @@ namespace HTTP5112_Cumulative_1.Models
         public string EmployeeNumber;
         public string HireDate;
         public decimal Salary;
+        public List<Class> CourseTaught;
     }
 }
 

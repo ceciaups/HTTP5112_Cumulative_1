@@ -58,17 +58,18 @@ namespace HTTP5112_Cumulative_1.Controllers
         [Route("api/TeacherData/FindTeacher")]
         public Teacher FindTeacher(int id)
         {
-            Teacher NewTeacher = new Teacher();
-
             MySqlConnection Conn = School.AccessDatabase();
 
             Conn.Open();
 
             MySqlCommand cmd = Conn.CreateCommand();
 
-            cmd.CommandText = "SELECT * FROM teachers WHERE teacherid = " + id;
+            cmd.CommandText = "SELECT * FROM teachers JOIN classes ON classes.teacherid = teachers.teacherid WHERE teachers.teacherid = " + id;
 
             MySqlDataReader ResultSet = cmd.ExecuteReader();
+
+            Teacher NewTeacher = new Teacher();
+            List<Class> NewClasses = new List<Class> { };
 
             while (ResultSet.Read())
             {
@@ -85,7 +86,25 @@ namespace HTTP5112_Cumulative_1.Controllers
                 NewTeacher.EmployeeNumber = EmployeeNumber;
                 NewTeacher.HireDate = HireDate;
                 NewTeacher.Salary = Salary;
+
+                Class NewClass = new Class();
+                int ClassId = Convert.ToInt32(ResultSet["classid"]);
+                string ClassCode = ResultSet["classcode"].ToString();
+                string StartDate = ResultSet["startdate"].ToString();
+                string FinishDate = ResultSet["finishdate"].ToString();
+                string ClassName = ResultSet["classname"].ToString();
+
+                NewClass.ClassId = ClassId;
+                NewClass.ClassCode = ClassCode;
+                NewClass.TeacherId = TeacherId;
+                NewClass.StartDate = StartDate;
+                NewClass.FinishDate = FinishDate;
+                NewClass.ClassName = ClassName;
+
+                NewClasses.Add(NewClass);
             }
+
+            NewTeacher.CourseTaught = NewClasses;
 
             Conn.Close();
 

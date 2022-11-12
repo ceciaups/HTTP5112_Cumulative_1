@@ -56,8 +56,6 @@ namespace HTTP5112_Cumulative_1.Controllers
         [Route("api/StudentData/FindStudent")]
         public Student FindStudent(int id)
         {
-            Student NewStudent = new Student();
-
             MySqlConnection Conn = School.AccessDatabase();
 
             Conn.Open();
@@ -67,6 +65,8 @@ namespace HTTP5112_Cumulative_1.Controllers
             cmd.CommandText = "SELECT * FROM Students WHERE Studentid = " + id;
 
             MySqlDataReader ResultSet = cmd.ExecuteReader();
+
+            Student NewStudent = new Student();
 
             while (ResultSet.Read())
             {
