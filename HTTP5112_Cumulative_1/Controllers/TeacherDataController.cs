@@ -13,6 +13,11 @@ namespace HTTP5112_Cumulative_1.Controllers
     {
         private SchoolDbContext School = new SchoolDbContext();
 
+        /// <summary>
+        /// This controller will access the teachers table of school database and return a list of teachers in the school database.
+        /// </summary>
+        /// <returns>A list of teachers (first names and last names)</returns>
+        /// <example>GET api/TeacherData/ListTeachers</example>
         [HttpGet]
         [Route("api/TeacherData/ListTeachers")]
         public IEnumerable<Teacher> ListTeachers()
@@ -54,6 +59,12 @@ namespace HTTP5112_Cumulative_1.Controllers
             return Teachers;
         }
 
+        /// <summary>
+        /// This controller will find a teacher in the system given an ID
+        /// </summary>
+        /// <param name="id">The teacher primary key</param>
+        /// <returns>A teacher object</returns>
+        /// <example>GET api/TeacherData/FindTeacher</example>
         [HttpGet]
         [Route("api/TeacherData/FindTeacher")]
         public Teacher FindTeacher(int id)

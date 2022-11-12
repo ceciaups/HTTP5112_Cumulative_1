@@ -52,6 +52,12 @@ namespace HTTP5112_Cumulative_1.Controllers
             return Students;
         }
 
+        /// <summary>
+        /// This controller will find a student in the system given an ID
+        /// </summary>
+        /// <param name="id">The student primary key</param>
+        /// <returns>A student object</returns>
+        /// <example>GET api/StudentData/FindStudent</example>
         [HttpGet]
         [Route("api/StudentData/FindStudent")]
         public Student FindStudent(int id)
