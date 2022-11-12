@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{7B4568ED-61FA-4103-B86A-E5D35971DBA7}|HTTP5112_Cumulative_1">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HTTP5112_Cumulative_1" expanded="True" selected="True" />
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.HTTP5112__Cumulative__1f__obs PreferredExecutionTarget="/Applications/Safari.app" />
+</Properties>

@@ -1,0 +1,22 @@
+﻿@model IEnumerable<HTTP5112_Cumulative_1.Models.Class>
+@{
+    ViewBag.Title = "Class List";
+}
+
+<div>
+    <a class="navlink" href="/Class">Back To Classes</a>
+</div>
+
+<div class="text-center">
+    <h1 class="display-4">Classes Page</h1>
+</div>
+
+<div id="containerlist">
+    <h2>List of classs</h2>
+    @foreach (var Class in Model)
+    {
+        <div class="listitem row">
+            <div class="col-md-12"><a href="/class/Show/@Class.ClassId">@Class.ClassCode</a></div>
+        </div>
+    }
+</div>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<HTTP5112_Cumulative_1.Models.Teacher>
+@{
+    ViewBag.Title = "Teachers Page";
+}
+
+<div>
+    <a class="navlink" href="../">Back To Home</a>
+</div>
+
+<div class="text-center">
+    <h1 class="display-4">Teachers Page</h1>
+</div>
+
+<form method="GET" action="Teacher/Show">
+    <div>
+        <label>Find a teacher: </label>
+        <select name="id">
+            @foreach (var teacher in Model)
+            {
+                <option value=@teacher.TeacherId>@teacher.TeacherFname @teacher.TeacherLname</option>
+            }
+        </select>
+        <input type="submit" value="Search!" />
+    </div>
+</form>
+
+<a class="navlink" href="Teacher/List">List of Teachers</a>
