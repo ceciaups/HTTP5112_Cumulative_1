@@ -28,7 +28,8 @@ namespace HTTP5112_Cumulative_1.Controllers
 
             MySqlCommand cmd = Conn.CreateCommand();
 
-            cmd.CommandText = "SELECT * FROM teachers where lower(teacherfname) like lower(@key) or lower(teacherlname) like lower(@key) or lower(concat(teacherfname, ' ', teacherlname)) like lower(@key)";
+            //cmd.CommandText = "SELECT * FROM teachers where lower(teacherfname) like lower(@key) or lower(teacherlname) like lower(@key) or lower(concat(teacherfname, ' ', teacherlname)) like lower(@key)";
+            cmd.CommandText = "SELECT * FROM teachers where lower(concat(teacherfname, ' ', teacherlname)) like lower(@key)";
 
             cmd.Parameters.AddWithValue("@key", "%" + SearchKey + "%");
             cmd.Prepare();

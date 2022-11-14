@@ -20,7 +20,7 @@ namespace HTTP5112_Cumulative_1.Controllers
         /// <example>GET api/ClassData/ListClasses</example>
         [HttpGet]
         [Route("api/ClassData/ListClasses")]
-        public IEnumerable<Class> ListClasses()
+        public IEnumerable<Class> ListClasses(string SearchKey = null)
         {
             MySqlConnection Conn = School.AccessDatabase();
 
@@ -28,7 +28,10 @@ namespace HTTP5112_Cumulative_1.Controllers
 
             MySqlCommand cmd = Conn.CreateCommand();
 
-            cmd.CommandText = "SELECT * FROM classes";
+            cmd.CommandText = "SELECT * FROM classes where lower(classcode) like lower(@key) or lower(classname) like lower(@key) or lower(concat(classcode, ' ', classname)) like lower(@key)";
+
+            cmd.Parameters.AddWithValue("@key", "%" + SearchKey + "%");
+            cmd.Prepare();
 
             MySqlDataReader ResultSet = cmd.ExecuteReader();
 

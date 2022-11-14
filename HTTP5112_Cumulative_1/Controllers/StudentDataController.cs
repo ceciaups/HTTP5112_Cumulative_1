@@ -15,7 +15,7 @@ namespace HTTP5112_Cumulative_1.Controllers
 
         [HttpGet]
         [Route("api/StudentData/ListStudents")]
-        public IEnumerable<Student> ListStudents()
+        public IEnumerable<Student> ListStudents(string SearchKey = null)
         {
             MySqlConnection Conn = School.AccessDatabase();
 
@@ -23,7 +23,10 @@ namespace HTTP5112_Cumulative_1.Controllers
 
             MySqlCommand cmd = Conn.CreateCommand();
 
-            cmd.CommandText = "SELECT * FROM students";
+            cmd.CommandText = "SELECT * FROM students where lower(studentfname) like lower(@key) or lower(studentlname) like lower(@key) or lower(concat(studentfname, ' ', studentlname)) like lower(@key)";
+
+            cmd.Parameters.AddWithValue("@key", "%" + SearchKey + "%");
+            cmd.Prepare();
 
             MySqlDataReader ResultSet = cmd.ExecuteReader();
 

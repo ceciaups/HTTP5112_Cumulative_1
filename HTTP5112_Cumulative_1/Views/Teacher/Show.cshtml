@@ -23,7 +23,7 @@
         <ol>
             @foreach (var Class in Model.CourseTaught)
             {
-                <li>@Class.ClassCode @Class.ClassName</li>
+                <li><a href="/Class/Show/@Class.ClassId">@Class.ClassCode @Class.ClassName</a></li>
             }
         </ol>
     </p>
