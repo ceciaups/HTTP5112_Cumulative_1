@@ -71,7 +71,10 @@ namespace HTTP5112_Cumulative_1.Controllers
 
             MySqlCommand cmd = Conn.CreateCommand();
 
-            cmd.CommandText = "SELECT * FROM Students WHERE Studentid = " + id;
+            cmd.CommandText = "SELECT * FROM Students WHERE Studentid = @id";
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Prepare();
 
             MySqlDataReader ResultSet = cmd.ExecuteReader();
 

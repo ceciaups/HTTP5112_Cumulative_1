@@ -79,7 +79,10 @@ namespace HTTP5112_Cumulative_1.Controllers
 
             MySqlCommand cmd = Conn.CreateCommand();
 
-            cmd.CommandText = "SELECT * FROM teachers JOIN classes ON classes.teacherid = teachers.teacherid WHERE teachers.teacherid = " + id;
+            cmd.CommandText = "SELECT * FROM teachers JOIN classes ON classes.teacherid = teachers.teacherid WHERE teachers.teacherid = @id";
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Prepare();
 
             MySqlDataReader ResultSet = cmd.ExecuteReader();
 
