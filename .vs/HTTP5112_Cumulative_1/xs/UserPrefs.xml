@@ -4,11 +4,22 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="HTTP5112_Cumulative_1/Controllers/TeacherDataController.cs">
+    <Files>
+      <File FileName="HTTP5112_Cumulative_1/Controllers/TeacherDataController.cs" Line="34" Column="27" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="HTTP5112_Cumulative_1" expanded="True" />
+          <Node name="HTTP5112_Cumulative_1" expanded="True">
+            <Node name="HTTP5112_Cumulative_1" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Teacher" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
