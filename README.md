@@ -5,7 +5,7 @@
 - A class which connects to MySQL school database
 
 ## Home:
-![The layout of the Home Page](https://raw.githubusercontent.com/ceciaups/HTTP5112_Cumulative_1/master/HTTP5112_Cumulative_1/Capture/layout.png)
+![The layout of the Home Page](https://raw.githubusercontent.com/ceciaups/HTTP5112_Cumulative_1/master/HTTP5112_Cumulative_1/Capture/home.png)
 - [/Views/Home/Index.cshtml](HTTP5112_Cumulative_1/Views/Home/Index.cshtml)
 - Home page leads to other pages (teacher, student and class)
 
