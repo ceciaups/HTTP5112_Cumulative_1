@@ -20,10 +20,10 @@ namespace HTTP5112_Cumulative_1.Controllers
         }
 
         //GET : /Class/List
-        public ActionResult List(string SearchKey = null)
+        public ActionResult List(string classCode = null, string className = null, List<string> semester = null)
         {
             ClassDataController controller = new ClassDataController();
-            IEnumerable<Class> Classes = controller.ListClasses(SearchKey);
+            IEnumerable<Class> Classes = controller.ListClasses(classCode, className, semester);
             return View(Classes);
         }
 

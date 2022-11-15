@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Threading.Tasks;
@@ -79,7 +80,7 @@ namespace HTTP5112_Cumulative_1.Controllers
 
             MySqlCommand cmd = Conn.CreateCommand();
 
-            cmd.CommandText = "SELECT * FROM teachers JOIN classes ON classes.teacherid = teachers.teacherid WHERE teachers.teacherid = @id";
+            cmd.CommandText = "SELECT * FROM teachers LEFT OUTER JOIN classes ON classes.teacherid = teachers.teacherid WHERE teachers.teacherid = @id";
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Prepare();
@@ -105,21 +106,26 @@ namespace HTTP5112_Cumulative_1.Controllers
                 NewTeacher.HireDate = HireDate;
                 NewTeacher.Salary = Salary;
 
-                Class NewClass = new Class();
-                int ClassId = Convert.ToInt32(ResultSet["classid"]);
-                string ClassCode = ResultSet["classcode"].ToString();
-                string StartDate = ResultSet["startdate"].ToString();
-                string FinishDate = ResultSet["finishdate"].ToString();
-                string ClassName = ResultSet["classname"].ToString();
+                Debug.WriteLine(ResultSet["classid"].ToString());
 
-                NewClass.ClassId = ClassId;
-                NewClass.ClassCode = ClassCode;
-                NewClass.TeacherId = TeacherId;
-                NewClass.StartDate = StartDate;
-                NewClass.FinishDate = FinishDate;
-                NewClass.ClassName = ClassName;
+                if (ResultSet["classid"].ToString() != "")
+                {
+                    Class NewClass = new Class();
+                    int ClassId = Convert.ToInt32(ResultSet["classid"]);
+                    string ClassCode = ResultSet["classcode"].ToString();
+                    string StartDate = ResultSet["startdate"].ToString();
+                    string FinishDate = ResultSet["finishdate"].ToString();
+                    string ClassName = ResultSet["classname"].ToString();
 
-                NewClasses.Add(NewClass);
+                    NewClass.ClassId = ClassId;
+                    NewClass.ClassCode = ClassCode;
+                    NewClass.TeacherId = TeacherId;
+                    NewClass.StartDate = StartDate;
+                    NewClass.FinishDate = FinishDate;
+                    NewClass.ClassName = ClassName;
+
+                    NewClasses.Add(NewClass);
+                }
             }
 
             NewTeacher.CourseTaught = NewClasses;

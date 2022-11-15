@@ -4,10 +4,10 @@
 - [/Models/SchoolDbContext.cs](HTTP5112_Cumulative_1/Models/SchoolDbContext.cs)
 - A class which connects to MySQL school database
 
-## Layout:
+## Home:
 ![The layout of the Home Page](https://raw.githubusercontent.com/ceciaups/HTTP5112_Cumulative_1/master/HTTP5112_Cumulative_1/Capture/layout.png)
-- [/Views/Shared/_Layout.cshtml](HTTP5112_Cumulative_1/Views/Shared/_Layout.cshtml)
-- The layout of the web application
+- [/Views/Home/Index.cshtml](HTTP5112_Cumulative_1/Views/Home/Index.cshtml)
+- Home page leads to other pages (teacher, student and class)
 
 ## Teacher:
 ![The layout of the Teacher Page](https://raw.githubusercontent.com/ceciaups/HTTP5112_Cumulative_1/master/HTTP5112_Cumulative_1/Capture/teacher.png)
